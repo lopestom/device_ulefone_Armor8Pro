@@ -27,7 +27,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/roo
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Armor8Pro
-PRODUCT_NAME := twrp_Armor8Pro
+PRODUCT_NAME := Armor8Pro
 PRODUCT_BRAND := ulefone
 PRODUCT_MODEL := Armor 8 Pro
 PRODUCT_MANUFACTURER := ulefone
