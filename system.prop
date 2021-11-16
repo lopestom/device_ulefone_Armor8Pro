@@ -1,0 +1,13 @@
+ro.adb.secure=0
+ro.product.board=Gotron-GQ3090RH5
+ro.board.platform=mt6771
+ro.hardware.egl=meow
+ro.vendor.mediatek.platform=MT6771
+ro.vendor.mtk_f2fs_enable=0
+ro.vendor.mtk_emmc_support=1
+ro.vendor.mtk_ufs_support=1
+ro.hardware.kmsetkey=beanpod
+ro.hardware.gatekeeper=beanpod
+ro.vendor.mtk_microtrust_tee_support=1
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.sf.lcd_density=320
