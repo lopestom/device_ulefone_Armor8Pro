@@ -18,7 +18,7 @@ env:
   DEVICE: Armor8Pro
   DT_REPO: https://github.com/lopestom/device_ulefone_Armor8Pro.git
   DT_PATH: device/ulefone/Armor8Pro
-  TARGET: recovery
+  TARGET: boot
 
 jobs:
   build:
@@ -49,6 +49,7 @@ jobs:
              
        - name: Build
          run: |
+              make clean
               . build/envsetup.sh
               lunch twrp_$DEVICE-eng || true
               export ALLOW_MISSING_DEPENDENCIES=true && mka ${TARGET}image
