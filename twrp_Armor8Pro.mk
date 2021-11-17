@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 # Define hardware platform
-PRODUCT_PLATFORM := Armor8Pro
+PRODUCT_PLATFORM := mt6771
 
 # Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
