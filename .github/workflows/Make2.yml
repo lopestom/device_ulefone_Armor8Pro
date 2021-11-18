@@ -31,6 +31,11 @@ on:
         description: 'DEVICE_NAME'
         required: true
         default: 'Armor8Pro'
+      DEVICE_PARTITION:
+        description: 'DEVICE_PARTITION'
+        required: true
+        default: 'bootimage or recoveryimage'
+
 
 jobs:
   build:
@@ -95,7 +100,7 @@ jobs:
         source build/envsetup.sh
         lunch ${{ github.event.inputs.LIBRARY_NAME }}_${{ github.event.inputs.DEVICE_NAME }}-eng 
         make clean
-        make bootimage -j$(nproc --all)
+        make ${{ github.event.inputs.DEVICE_PARTITION }} -j$(nproc --all)
 
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
