@@ -22,7 +22,7 @@ on:
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
-        default: 'main'
+        default: 'branch'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
@@ -34,7 +34,7 @@ on:
       DEVICE_PARTITION:
         description: 'DEVICE_PARTITION'
         required: true
-        default: 'bootimage or recoveryimage'
+        default: 'boot or recovery'
 
 
 jobs:
@@ -100,14 +100,14 @@ jobs:
         source build/envsetup.sh
         lunch ${{ github.event.inputs.LIBRARY_NAME }}_${{ github.event.inputs.DEVICE_NAME }}-eng 
         make clean
-        make ${{ github.event.inputs.DEVICE_PARTITION }} -j$(nproc --all)
+        make ${{ github.event.inputs.DEVICE_PARTITION }}image -j$(nproc --all)
 
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/${{ github.event.inputs.DEVICE_PARTITION }}.img
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: Recovery for ${{ github.event.inputs.DEVICE_NAME }}
