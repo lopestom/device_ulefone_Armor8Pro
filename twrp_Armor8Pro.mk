@@ -35,7 +35,7 @@ PRODUCT_MODEL := Armor 8 Pro
 PRODUCT_MANUFACTURER := ulefone
 
 # Dynamic
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
+#PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Extra required packages
 PRODUCT_PACKAGES += \
