@@ -15,4 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_Armor8Pro.mk
+    $(LOCAL_DIR)/twrp_Armor_8_Pro.mk
+
+COMMON_LUNCH_CHOICES := \
+    twrp_Armor_8_Pro-user \
+    twrp_Armor_8_Pro-userdebug \
+    twrp_Armor_8_Pro-eng

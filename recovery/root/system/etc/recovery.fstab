@@ -1,0 +1,13 @@
+# fstab
+system                                     /system          ext4                ro wait,slotselect,logical
+vendor                                     /vendor          ext4                ro wait,slotselect,logical
+product                                    /product         ext4                ro wait,slotselect,logical
+
+/dev/block/platform/bootdevice/by-name/md_udc       /metadata        ext4                noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
+
+/dev/block/platform/bootdevice/by-name/userdata                         /data            ext4                noatime,nosuid,nodev,noauto_da_alloc,errors=panic,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
+
+/dev/block/platform/bootdevice/by-name/para         /misc            emmc                defaults       defaults
+
+/dev/block/by-name/boot                             /boot            emmc                defaults       slotselect
+
